@@ -8,7 +8,8 @@ Plug 'w0rp/ale'
 Plug 'posva/vim-vue'
 Plug 'Valloric/YouCompleteMe'
 Plug 'preservim/nerdtree'
-Plug 'frazrepo/vim-rainbow'
+Plug 'mustache/vim-mustache-handlebars'
+
 call plug#end()
 
 colorscheme nord
@@ -24,6 +25,8 @@ let g:ale_fixers = {
 \   'javascript': ['prettier', 'eslint'],
 \   'vue': ['prettier', 'eslint'],
 \   'scss': ['prettier', 'stylelint'],
+\		'php':['prettier', 'eslint'],
+\		'html':['prettier','eslint'],
 \}
 
 let g:ycm_language_server = [ {
@@ -39,6 +42,3 @@ if executable(s:clip)
         autocmd TextYankPost * if v:event.operator ==# 'y' | call system(s:clip, @0) | endif
     augroup END
 endif
-
-" Rainbow brackets
-let g:rainbow_active = 1
